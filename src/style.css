@@ -1,0 +1,204 @@
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	src: url("./assets/fonts/Roboto.ttf") format("truetype");
+}
+@font-face {
+	font-family: "PlayfairDisplay";
+	font-style: normal;
+	src: url("./assets/fonts/PlayfairDisplay.ttf") format("truetype");
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+}
+
+body {
+	font-family: "Roboto";
+}
+
+h1 {
+	font-family: "PlayfairDisplay";
+}
+
+header {
+	position: relative;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #4f3ff9, #f9506c);
+	transform: scaleY(1.5) translateY(-30%) skewY(-7deg);
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+	z-index: -1;
+}
+
+.profile-pic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile-pic img {
+	max-width: 40rem;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	filter: brightness(1.1) contrast(1.1);
+}
+
+.profile-pic .name {
+	position: absolute;
+	bottom: 4rem;
+
+	font-family: "PlayfairDisplay";
+	color: rgb(255, 255, 255);
+	font-size: 6rem;
+	z-index: 1;
+}
+
+.aboutme {
+	max-width: 40rem;
+	background-color: white;
+	padding: 2rem;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.aboutme h1 {
+	font-size: 3rem;
+}
+
+.aboutme p {
+	font-size: 1.5rem;
+}
+
+header .socialsIcons {
+	display: flex;
+	justify-content: end;
+	gap: 1.5rem;
+}
+
+header .socialsIcons img {
+	width: 3rem;
+}
+
+main {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(3, minmax(10rem, 37.5rem));
+	gap: 5rem 3rem;
+	margin: 10rem 6rem;
+}
+
+main h1 {
+	font-size: 4rem;
+	grid-column: 1 / 4;
+	margin: 0;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.project > img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.project img:hover,
+.socialsIcons img:hover {
+	transform: scale(1.1);
+}
+
+.project img,
+.socialsIcons img {
+	transition: transform 0.3s ease;
+}
+
+.project-description {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 2rem 1rem;
+}
+
+.project-description p {
+	color: #4e4e4e;
+}
+
+.project-header {
+	display: flex;
+	align-items: center;
+}
+
+.project h2 {
+	font-family: "PlayfairDisplay";
+}
+
+.project-links {
+	margin-left: auto;
+	display: flex;
+	gap: 1rem;
+}
+
+.project-links img {
+	width: 2rem;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	background: linear-gradient(90deg, #4f3ff9, #f9506c);
+	color: white;
+	padding: 5rem 2rem;
+}
+
+footer > img {
+	max-width: 30rem;
+	margin-left: auto;
+}
+
+.contacts h1 {
+	font-family: "PlayfairDisplay";
+	font-size: 3rem;
+	margin: 0;
+}
+
+.contacts p {
+	font-size: 1.5rem;
+}
+
+.contacts div {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.contacts div img {
+	width: 2rem;
+	filter: invert(1);
+}
+
+.contacts .socialsIcons img {
+	width: 3rem;
+}
+
+.contacts .socialsIcons {
+	display: flex;
+	gap: 1.5rem;
+	filter: invert(1);
+	margin: 1rem 0rem;
+}
