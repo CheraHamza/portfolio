@@ -13,7 +13,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 1rem;
+	font-size: 16px;
 }
 
 body {
@@ -93,17 +93,20 @@ header .socialsIcons img {
 }
 
 main {
-	display: grid;
+	display: flex;
 	justify-content: center;
-	grid-template-columns: repeat(3, minmax(10rem, 37.5rem));
-	gap: 5rem 3rem;
-	margin: 10rem 6rem;
+	margin: 10rem 3rem;
 }
 
 main h1 {
 	font-size: 4rem;
-	grid-column: 1 / 4;
-	margin: 0;
+}
+
+.projects {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	gap: 5rem 3rem;
 }
 
 .project {
@@ -115,8 +118,7 @@ main h1 {
 }
 
 .project > img {
-	width: 100%;
-	object-fit: cover;
+	max-width: 100%;
 }
 
 .project img:hover,
@@ -161,6 +163,7 @@ main h1 {
 footer {
 	display: flex;
 	align-items: center;
+	gap: 1rem;
 	background: linear-gradient(90deg, #4f3ff9, #f9506c);
 	color: white;
 	padding: 5rem 2rem;
@@ -201,4 +204,7 @@ footer > img {
 	gap: 1.5rem;
 	filter: invert(1);
 	margin: 1rem 0rem;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
 }
