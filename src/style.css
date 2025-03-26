@@ -26,10 +26,6 @@ h1 {
 
 header {
 	position: relative;
-	padding: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 header::before {
@@ -40,45 +36,58 @@ header::before {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(45deg, #4f3ff9, #f9506c);
-	transform: scaleY(1.5) translateY(-30%) skewY(-7deg);
+	transform: translateY(-30%) skewY(-7deg);
 	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 	z-index: -1;
 }
 
-.profile-pic {
+.wrapper {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	padding: 3rem;
 }
 
-.profile-pic img {
-	max-width: 40rem;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+.img-wrapper {
+	width: min(100% - 1.25rem, 30rem);
+	position: relative;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.img-wrapper img {
+	width: 100%;
+	display: block;
 	filter: brightness(1.1) contrast(1.1);
 }
 
-.profile-pic .name {
+.img-wrapper .name {
+	width: 100%;
 	position: absolute;
-	bottom: 4rem;
+	bottom: 1.5rem;
 
+	text-align: center;
 	font-family: "PlayfairDisplay";
 	color: rgb(255, 255, 255);
-	font-size: 6rem;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+	font-size: 4rem;
+	font-weight: bold;
 	z-index: 1;
 }
 
-.aboutme {
-	max-width: 40rem;
+.about-me {
+	box-sizing: border-box;
+	width: min(100vw - 3rem, 40rem);
 	background-color: white;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 	padding: 2rem;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.aboutme h1 {
+.about-me h1 {
+	margin: 0;
 	font-size: 3rem;
 }
 
-.aboutme p {
+.about-me p {
 	font-size: 1.5rem;
 }
 
@@ -95,7 +104,7 @@ header .socialsIcons img {
 main {
 	display: flex;
 	justify-content: center;
-	margin: 10rem 3rem;
+	margin: 4rem 3rem;
 }
 
 main h1 {
@@ -105,7 +114,7 @@ main h1 {
 .projects {
 	display: grid;
 	justify-content: center;
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 	gap: 5rem 3rem;
 }
 
@@ -113,7 +122,7 @@ main h1 {
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 }
 
@@ -161,50 +170,106 @@ main h1 {
 }
 
 footer {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
 	background: linear-gradient(90deg, #4f3ff9, #f9506c);
 	color: white;
-	padding: 5rem 2rem;
 }
 
-footer > img {
-	max-width: 30rem;
-	margin-left: auto;
+footer .wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 6rem;
 }
 
-.contacts h1 {
+footer .wrapper > img {
+	display: block;
+	width: min(100vw - 3rem, 30rem);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info h1 {
 	font-family: "PlayfairDisplay";
 	font-size: 3rem;
-	margin: 0;
+	margin-top: 0;
 }
 
-.contacts p {
-	font-size: 1.5rem;
+.contact-info p {
+	margin: 1rem 0rem;
+	font-size: 1.3rem;
 }
 
-.contacts div {
+.contact-info div {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-.contacts div img {
+.contact-info div img {
 	width: 2rem;
 	filter: invert(1);
 }
 
-.contacts .socialsIcons img {
+.contact-info .socialsIcons img {
 	width: 3rem;
 }
 
-.contacts .socialsIcons {
+.contact-info .socialsIcons {
 	display: flex;
 	gap: 1.5rem;
 	filter: invert(1);
 	margin: 1rem 0rem;
 }
 
-@media (min-width: 601px) and (max-width: 1200px) {
+@media (max-width: 1100px) {
+	.about-me {
+		margin: auto;
+	}
+
+	.img-wrapper .name {
+		font-size: 3rem;
+	}
+
+	footer .wrapper {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.contact-info {
+		text-align: center;
+	}
+
+	.contact-info div {
+		justify-content: center;
+	}
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+	header .wrapper {
+		display: block;
+	}
+
+	.img-wrapper {
+		width: 23rem;
+		height: 23rem;
+		float: left;
+		margin-right: 1rem;
+	}
+
+	.about-me {
+		margin-top: 3rem;
+	}
+}
+
+@media (max-width: 800px) {
+	header .wrapper {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.img-wrapper {
+		width: min(100vw - 3rem, 23rem);
+	}
+
+	.about-me {
+		margin: 0;
+	}
 }
